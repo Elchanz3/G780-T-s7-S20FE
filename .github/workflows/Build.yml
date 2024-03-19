@@ -21,6 +21,9 @@ jobs:
      run: sudo apt-get -y install aptitude make gcc libtinfo5
    - name: aptitude 
      run: sudo aptitude -y install libssl-dev
+   - name: use python3 as python2
+     run: sudo rm -rf /usr/local/bin/python2 && sudo ln -s $(which python3) /usr/local/bin/python2
+
         
    - name: make script file executable 
      run: chmod +x build_kernel.sh
